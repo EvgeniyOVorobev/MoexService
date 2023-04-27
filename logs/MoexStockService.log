@@ -1,0 +1,37 @@
+2023-04-26T21:58:59.071+03:00  INFO 9256 --- [main] r.ev.MoexService.MoexServiceApplication  : Starting MoexServiceApplication using Java 19.0.1 with PID 9256 (C:\Users\Z\Desktop\java\MoexService\target\classes started by Z in C:\Users\Z\Desktop\java\MoexService)
+2023-04-26T21:58:59.076+03:00  INFO 9256 --- [main] r.ev.MoexService.MoexServiceApplication  : No active profile set, falling back to 1 default profile: "default"
+2023-04-26T21:59:00.441+03:00  INFO 9256 --- [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b3cad432-be14-323e-9aa9-626cf8fd43ea
+2023-04-26T21:59:00.449+03:00  WARN 9256 --- [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'ru.ev.MoexService.moexclient.CorporateBondsClient' defined in null: Could not resolve placeholder 'moex.bonds.corporate.ru' in value "http://${moex.bonds.corporate.ru}"
+2023-04-26T21:59:00.466+03:00  INFO 9256 --- [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2023-04-26T21:59:00.496+03:00 ERROR 9256 --- [main] o.s.boot.SpringApplication               : Application run failed
+
+org.springframework.beans.factory.BeanDefinitionStoreException: Invalid bean definition with name 'ru.ev.MoexService.moexclient.CorporateBondsClient' defined in null: Could not resolve placeholder 'moex.bonds.corporate.ru' in value "http://${moex.bonds.corporate.ru}"
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:230) ~[spring-beans-6.0.8.jar:6.0.8]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.processProperties(PropertySourcesPlaceholderConfigurer.java:198) ~[spring-context-6.0.8.jar:6.0.8]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.postProcessBeanFactory(PropertySourcesPlaceholderConfigurer.java:173) ~[spring-context-6.0.8.jar:6.0.8]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:358) ~[spring-context-6.0.8.jar:6.0.8]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:186) ~[spring-context-6.0.8.jar:6.0.8]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:747) ~[spring-context-6.0.8.jar:6.0.8]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:565) ~[spring-context-6.0.8.jar:6.0.8]
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.0.6.jar:3.0.6]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732) ~[spring-boot-3.0.6.jar:3.0.6]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434) ~[spring-boot-3.0.6.jar:3.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310) ~[spring-boot-3.0.6.jar:3.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304) ~[spring-boot-3.0.6.jar:3.0.6]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293) ~[spring-boot-3.0.6.jar:3.0.6]
+	at ru.ev.MoexService.MoexServiceApplication.main(MoexServiceApplication.java:12) ~[classes/:na]
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'moex.bonds.corporate.ru' in value "http://${moex.bonds.corporate.ru}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180) ~[spring-core-6.0.8.jar:6.0.8]
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126) ~[spring-core-6.0.8.jar:6.0.8]
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239) ~[spring-core-6.0.8.jar:6.0.8]
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210) ~[spring-core-6.0.8.jar:6.0.8]
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:191) ~[spring-context-6.0.8.jar:6.0.8]
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveStringValue(BeanDefinitionVisitor.java:293) ~[spring-beans-6.0.8.jar:6.0.8]
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.resolveValue(BeanDefinitionVisitor.java:219) ~[spring-beans-6.0.8.jar:6.0.8]
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitPropertyValues(BeanDefinitionVisitor.java:147) ~[spring-beans-6.0.8.jar:6.0.8]
+	at org.springframework.beans.factory.config.BeanDefinitionVisitor.visitBeanDefinition(BeanDefinitionVisitor.java:85) ~[spring-beans-6.0.8.jar:6.0.8]
+	at org.springframework.beans.factory.config.PlaceholderConfigurerSupport.doProcessProperties(PlaceholderConfigurerSupport.java:227) ~[spring-beans-6.0.8.jar:6.0.8]
+	... 13 common frames omitted
+
